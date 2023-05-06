@@ -1,59 +1,43 @@
 const clickerButton = document.getElementById("clicker");
 const autoButton = document.getElementById("autoButton");
+const clickersOwned = document.getElementById("clickersOwned");
 let clickCount = 0;
 let amountForAuto = 100;
+let numberOfAutoclickers = [];
+let numberOfAutoclicks = 0;
 autoButton.disabled = true;
+autoButton.style.backgroundColor = "gray";
 
 clickerButton.addEventListener("click", function(){
     clickCount ++;
     clickerButton.innerHTML = "Donuts baked: " + clickCount;
-    if (clickCount === amountForAuto) {
+    if (clickCount >= amountForAuto && clickCount % amountForAuto === 0){
         autoButton.disabled = false;
     }
 });
 
 autoButton.addEventListener("click", function(){
+    if (clickCount >= amountForAuto){
     clickCount -= amountForAuto;
-    amountForAutoCost = Math.floor(amountForAuto*1.1);
-    setInterval(function() {
+    numberOfAutoclicks++;
+    amountForAuto = Math.floor(amountForAuto*1.1);
+    numberOfAutoclickers.push(setInterval(function(){
         clickerButton.click();
-    }, 1000);
+    }, 1000));
     autoButton.disabled = true;
+    autoButton.style.backgroundColor = "gray";
     if (clickCount >= amountForAuto){
         autoButton.disabled = false;
+        autoButton.style.backgroundColor = "pink";
     }
+}
 });
+
+function stopAutoclicking(){
+    clearInterval(numberOfAutoclickers.pop());
+    numberOfAutoclicks--;
+}
 
 
 
 // autoButton.style.backgroundColor = "gray";
-
-// clickerButton.onclick = function() {
-//     count += 1;
-//     clickerButton.innerHTML = "Donuts baked: " + count;
-// };
-
-// setInterval(function() {
-//     clickerButton.click();
-// }, 1000);
-
-
-// let donutAmount = count;
-// let donutEvent = clickerButton.onmouseup;
-
-// let autoClicker = setInterval (function(){
-//     count += 1;
-// });
-
-
-// autoButton.addEventListener("click", function() {
-// // let autoPurchase = function(num){
-// //     return num * 1.1;}
-
-//     if (autoPurchase == true) {
-//         autoButton.disabled == false;
-//     } else {
-//         autoButton.style.backgroundColor = "gray";
-//         autoButton.disabled == true;
-//     }
-// }
