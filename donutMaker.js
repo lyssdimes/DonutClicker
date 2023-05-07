@@ -10,11 +10,27 @@ let numberOfAutoclicks = 0;
 autoButton.disabled = true;
 autoButton.style.backgroundColor = "gray";
 
+function updateAutoButtonColor() {
+    if (clickCount < amountForAuto) {
+      autoButton.style.backgroundColor = "gray";
+    } else {
+      autoButton.style.backgroundColor = "white";
+    }
+  }
+
 clickerButton.addEventListener("click", function(){
     clickCount ++;
     clickerButton.innerHTML = "Donuts Baked: " + clickCount;
     if (clickCount >= amountForAuto && clickCount % amountForAuto === 0){
         autoButton.disabled = false;
+    }
+    if (clickCount < amountForAuto){
+        autoButton.disabled = true;
+        updateAutoButtonColor();
+    }
+    else{
+        autoButton.disabled = false;
+        updateAutoButtonColor();
     }
 });
 
@@ -30,11 +46,8 @@ autoButton.addEventListener("click", function(){
     }, 1000));
     autoButton.disabled = true;
     autoButton.style.backgroundColor = "gray";
-    if (clickCount >= amountForAuto){
-        autoButton.disabled = false;
-        autoButton.style.backgroundColor = "pink";
+    updateAutoButtonColor();
     }
-}
 });
 
 resetGame.addEventListener("click", function(){
