@@ -25,17 +25,21 @@
         <main>
             <section id="donutClicker">
                 <h2>Donut Making Magic</h2>
-                <button id="clicker">Click to make donuts</button>
+                <button id="clicker">Click to Make Donuts</button>
             </section>
             <div class="donut">
                <img id="donutLine" src="horizontaldonuts.jpg" alt="donut image"> 
             </div>
-            <section id="autoClicker">
-                <button id="autoButton">Click to purchase auto clicker</button>
-                <p id="clickersOwned">Don't worry, you can purchase an autoclicker for 100 donuts</p>
+            <div id="autoClicker">
+            <section>
+                <p class="clickersOwned">Tired of making the donuts yourself? Don't worry, you can purchase donut bakers, but you're going to have to work for it. You currently need <span id="donutBakers">100</span> more donuts to purchase a donut baker.</p>
+                <button id="autoButton">Click to Purchase Donut Baker</button>
             </section>
+            <section>
+                <button id="resetGame">Click to Reset Game</button>
+            </section>
+        </div>
         </main>
-    </header>
    <script src="donutMaker.js"></script> 
 </div>
 </body>

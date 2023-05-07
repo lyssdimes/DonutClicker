@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   margin: 10px 10px;
+  color: brown;
 }
 
 .container {
@@ -46,4 +47,20 @@ nav {
 #donutLine {
   max-width: 50%;
   max-height: 10%;
+}
+
+.clickersOwned{
+  padding-bottom: 10px;
+}
+
+#autoButton{
+  color: black;
+  width: 200px;
+  height: 50px;
+}
+
+#clicker{
+  width: 200px;
+  height: 50px;
+  background-color: oldlace;
 }

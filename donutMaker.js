@@ -1,6 +1,8 @@
 const clickerButton = document.getElementById("clicker");
 const autoButton = document.getElementById("autoButton");
 const clickersOwned = document.getElementById("clickersOwned");
+const donutBakers = document.getElementById("donutBakers");
+const resetGame = document.getElementById("resetGame");
 let clickCount = 0;
 let amountForAuto = 100;
 let numberOfAutoclickers = [];
@@ -10,7 +12,7 @@ autoButton.style.backgroundColor = "gray";
 
 clickerButton.addEventListener("click", function(){
     clickCount ++;
-    clickerButton.innerHTML = "Donuts baked: " + clickCount;
+    clickerButton.innerHTML = "Donuts Baked: " + clickCount;
     if (clickCount >= amountForAuto && clickCount % amountForAuto === 0){
         autoButton.disabled = false;
     }
@@ -21,6 +23,8 @@ autoButton.addEventListener("click", function(){
     clickCount -= amountForAuto;
     numberOfAutoclicks++;
     amountForAuto = Math.floor(amountForAuto*1.1);
+    autoButton.innerHTML = "Donut Bakers Working: " + numberOfAutoclicks;
+    donutBakers.innerHTML = amountForAuto;
     numberOfAutoclickers.push(setInterval(function(){
         clickerButton.click();
     }, 1000));
@@ -33,11 +37,16 @@ autoButton.addEventListener("click", function(){
 }
 });
 
-function stopAutoclicking(){
-    clearInterval(numberOfAutoclickers.pop());
-    numberOfAutoclicks--;
-}
+resetGame.addEventListener("click", function(){
+    clickCount = 0;
+    amountForAuto = 100;
+    numberOfAutoclickers.forEach(clearInterval);
+    numberOfAutoclickers = [];
+    clickerButton.innerText = "Click to Make Donuts";
+    autoButton.disabled = true;
+    autoButton.style.backgroundColor = "gray";
+    autoButton.innerHTML = "Click to Purchase Donut Baker";
+    donutBakers.innerHTML = "100";
+    console.log("game reset");
+});
 
-
-
-// autoButton.style.backgroundColor = "gray";
