@@ -5,26 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donut Clicker</title>
-    <link rel="stylesheet" href="layout.css"> 
+    <link rel="stylesheet" href="layout.css"/> 
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <div class="container">
 <body>
     <header class="header">
         <nav class="nav">
-            <div class="flexNav">
-            <ul>
-                <li>Navigation</li>
-                <ul>
-                <li id="navFred">Fred the Baker Baking Company</li>
-                <li id="cookieClicker">Cookie Clicker--Our Inspiration</li>
-                <li id="contactMe">Contact Me</li>
-            </ul>
-            </ul>
-        </div>
+          <ul>
+            <li class="dropdown">Navigation
+              <ul class="dropdownBar">
+                <li id="navFred">
+                  <h5><a href="https://en.wikipedia.org/wiki/Fred_the_Baker" target="_blank">Fred the Baker Baking Company</a></h5>
+                </li>
+                <li id="cookieClicker">
+                  <h5><a href="https://orteil.dashnet.org/cookieclicker/" target="_blank">Cookie Clicker: Our Inspiration</a></h5>
+                </li>
+                <li id="contactMe">
+                  <h5><a href="https://www.linkedin.com/in/alyssadiamant/" target="_blank">Contact Me</a></h5>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </nav>
+      </header>
         <main>
             <section id="donutClicker">
-                <h2>Donut Making Magic</h2>
+                <h1>Donut Making Magic</h1>
                 <button id="clicker">Click to Make Donuts</button>
             </section>
             <div class="donut">
@@ -32,15 +39,73 @@
             </div>
             <div id="autoClicker">
             <section>
-                <p class="clickersOwned">Tired of making the donuts yourself? Don't worry, you can purchase donut bakers, but you're going to have to work for it. You currently need <span id="donutBakers">100</span> more donuts to purchase a donut baker.</p>
+                <h4 class="clickersOwned">Tired of making the donuts yourself? </h4>
+                <p>Don't worry, you can purchase donut bakers! You currently need: </p> 
+                <span id="donutBakers">100</span> 
+                <p>more donuts to purchase a donut baker.</p>
                 <button id="autoButton">Click to Purchase Donut Baker</button>
             </section>
             <section>
                 <button id="resetGame">Click to Reset Game</button>
             </section>
-        </div>
+            </div>
         </main>
+    </div>
    <script src="donutMaker.js"></script> 
-</div>
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donut Clicker</title>
+    <link rel="stylesheet" href="layout.css"/> 
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<div class="container">
+<body>
+    <header class="header">
+        <nav class="nav">
+          <ul>
+            <li class="dropdown">Navigation
+              <ul class="dropdownBar">
+                <li id="navFred">
+                  <h5><a href="https://en.wikipedia.org/wiki/Fred_the_Baker" target="_blank">Fred the Baker Baking Company</a></h5>
+                </li>
+                <li id="cookieClicker">
+                  <h5><a href="https://orteil.dashnet.org/cookieclicker/" target="_blank">Cookie Clicker: Our Inspiration</a></h5>
+                </li>
+                <li id="contactMe">
+                  <h5><a href="https://www.linkedin.com/in/alyssadiamant/" target="_blank">Contact Me</a></h5>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
+        <main>
+            <section id="donutClicker">
+                <h1>Donut Making Magic</h1>
+                <button id="clicker">Click to Make Donuts</button>
+            </section>
+            <div class="donut">
+               <img id="donutLine" src="horizontaldonuts.jpg" alt="donut image"> 
+            </div>
+            <div id="autoClicker">
+            <section>
+                <h4 class="clickersOwned">Tired of making the donuts yourself? </h4>
+                <p>Don't worry, you can purchase donut bakers! You currently need: </p> 
+                <span id="donutBakers">100</span> 
+                <p>more donuts to purchase a donut baker.</p>
+                <button id="autoButton">Click to Purchase Donut Baker</button>
+            </section>
+            <section>
+                <button id="resetGame">Click to Reset Game</button>
+            </section>
+            </div>
+        </main>
+    </div>
+   <script src="donutMaker.js"></script> 
 </body>
 </html>

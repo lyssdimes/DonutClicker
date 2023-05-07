@@ -1,46 +1,58 @@
 * {
   box-sizing: border-box;
   margin: 10px 10px;
-  color: brown;
 }
 
 .container {
   display: grid;
   min-height: 1000px;
   grid-template-columns: 100%;
-  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-rows: 10% 30% 30% 30%;
   gap: 5px;
-  background-image: linear-gradient(pink, tan, pink);
 }
 
-nav {
+header {
   grid-row: 1 / 2;
   row-gap: 5px;
-  background-color: rgb(233, 234, 149);
 }
 
-.flexNav {
-  display: flex;
-  flex-flow: row wrap;
+.nav{
+  position: relative;
+}
+
+.dropdown {
+  position: relative;
+  list-style: none;
+  display: block;
+}
+
+.dropdownBar {
+  position: absolute;
+  list-style: none;
+  visibility: hidden;
+  display: contents;
+}
+
+.dropdown:hover .dropdownBar{
+  visibility: visible;
+  display: block;
 }
 
 #donutClicker {
   grid-row: 2 / 3;
   row-gap: 5px;
-  background-color: rgb(255, 192, 233);
-  text-align: center;
 }
 
 #autoClicker {
   grid-row: 4 / 5;
   row-gap: 10px 10px;
-  background-color: rgb(255, 192, 233);
-  text-align: center;
-  color: white;
 }
 
 .donut {
   grid-row: 3 / 4;
+}
+
+#donutClicker, #autoClicker, .donut {
   text-align: center;
 }
 
@@ -54,7 +66,6 @@ nav {
 }
 
 #autoButton{
-  color: black;
   width: 200px;
   height: 50px;
 }
@@ -62,5 +73,9 @@ nav {
 #clicker{
   width: 200px;
   height: 50px;
-  background-color: oldlace;
 }
+
+#autoButton, #clicker{
+  border-radius: 12px;
+}
+
