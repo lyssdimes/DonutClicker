@@ -3,6 +3,7 @@ const autoButton = document.getElementById("autoButton");
 const clickersOwned = document.getElementById("clickersOwned");
 const donutBakers = document.getElementById("donutBakers");
 const resetGame = document.getElementById("resetGame");
+
 let clickCount = 0;
 let amountForAuto = 100;
 let numberOfAutoclickers = [];
@@ -62,4 +63,6 @@ resetGame.addEventListener("click", function(){
     donutBakers.innerHTML = "100";
     console.log("game reset");
 });
+
+
 
