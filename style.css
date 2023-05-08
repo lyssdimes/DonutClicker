@@ -46,3 +46,9 @@ a:hover {
   font-family: sans-serif, serif, Arial, Helvetica;
   font-size: larger;
 }
+
+#resetGame {
+  color: red;
+  border: 2px solid red;
+  background-color: white;
+}

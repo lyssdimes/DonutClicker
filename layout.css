@@ -78,7 +78,8 @@ header {
 }
 
 #autoButton,
-#clicker {
+#clicker,
+#resetGame {
   border-radius: 12px;
 }
 
